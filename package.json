@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "// start in terminal": "pnpm -C packages/my-library run start",
+    "start": "pnpm --filter my-library run start"
   },
   "keywords": [],
   "author": "",
