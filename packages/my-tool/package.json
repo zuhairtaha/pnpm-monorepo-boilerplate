@@ -1,0 +1,10 @@
+{
+  "name": "my-tool",
+  "version": "1.0.0",
+  "bin": {
+    "my-tool": "index.js"
+  },
+  "dependencies": {
+    "commander": "^2.9.0"
+  }
+}
