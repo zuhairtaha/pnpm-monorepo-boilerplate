@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "// start in terminal": "pnpm -C packages/my-library run start",
     "start": "pnpm --filter my-library run start"
   },
   "keywords": [],
