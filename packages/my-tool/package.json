@@ -5,6 +5,7 @@
     "my-tool": "index.js"
   },
   "dependencies": {
-    "commander": "^2.9.0"
+    "commander": "^2.9.0",
+    "my-library": "workspace:^"
   }
 }

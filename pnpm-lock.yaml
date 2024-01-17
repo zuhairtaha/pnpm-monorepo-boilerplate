@@ -19,6 +19,9 @@ importers:
       commander:
         specifier: ^2.9.0
         version: 2.20.3
+      my-library:
+        specifier: workspace:^
+        version: link:../my-library
 
 packages:
 

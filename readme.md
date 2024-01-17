@@ -12,4 +12,10 @@ pnpm -C packages/my-library start
 pnpm add lodash --filter package-a
 ```
 
+# Linking Between Packages:
 
+If `package-b` depends on `package-a`:
+
+```bash
+pnpm add package-a --filter package-b
+```
