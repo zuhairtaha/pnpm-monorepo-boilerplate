@@ -11,7 +11,7 @@ importers:
   packages/my-library:
     dependencies:
       lodash:
-        specifier: ^4.17.4
+        specifier: ^4.17.21
         version: 4.17.21
 
   packages/my-tool:
