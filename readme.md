@@ -2,8 +2,13 @@
 
 ```bash
 pnpm --filter my-library start
-# or
+pnpm --filter my-library run start
+
+pnpm start --filter my-library
+pnpm run start --filter my-library
+
 pnpm -C packages/my-library start
+pnpm -C packages/my-library run start
 ```
 
 # Add Dependencies
