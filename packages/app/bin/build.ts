@@ -30,7 +30,7 @@ emptyDir(dist);
 
 await build();
 
-watch(["src", "public"]).on("change", (path, stats) => {
+watch(["src", "public", "../ui"]).on("change", (path, stats) => {
   build();
   // console.log(path + " changed.");
 });

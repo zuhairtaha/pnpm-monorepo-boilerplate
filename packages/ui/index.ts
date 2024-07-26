@@ -1,1 +1,3 @@
-console.log("ui/index.ts");
+import "./navbar.ts";
+
+console.log("app.2..");
