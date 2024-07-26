@@ -6,7 +6,8 @@
   "scripts": {
     "main:start": "pnpm -F @tahasoft/main run start",
     "second:start": "pnpm -F @tahasoft/second run start",
-    "start": "pnpm -r run start"
+    "start": "pnpm -r run start",
+    "update:all": "pnpm -r update -i -L"
   },
   "keywords": [],
   "author": "",

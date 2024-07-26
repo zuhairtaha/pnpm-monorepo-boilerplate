@@ -57,3 +57,13 @@ Then in `packages\second\index.js`
 import snakeCase from "just-snake-case";
 console.log(snakeCase("Hello World"));
 ```
+
+# Update all packages
+
+in root package.json
+
+```json
+  "scripts": {
+    "update:all": "pnpm -r update -i -L" // i=interactive, L=latest (or --latest)
+  }
+```
