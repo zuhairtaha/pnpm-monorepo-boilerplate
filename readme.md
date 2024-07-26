@@ -29,4 +29,17 @@ import { second } from "@tahasoft/second";
 console.log(second);
 ```
 
-Run `pnpm install` in *root* folder to install the dependencies.
+Run `pnpm install` in _root_ folder to install the dependencies.
+
+# engines
+
+Add in root package.json
+
+```json
+  "engines": {
+    "node": ">=20.12.2",
+    "pnpm": ">=9.6.0"
+  }
+```
+
+That will make sure that all packages are using the same node version.
