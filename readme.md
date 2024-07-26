@@ -82,3 +82,15 @@ Now in `@tahasoft/main` and `@tahasoft/second` you can use `just-kebab-case` pac
 import kebabCase from "just-kebab-case";
 console.log(kebabCase("Hello World"));
 ```
+
+# Remove all node_modules
+
+add to root package.json
+
+```json
+"clean": "find . -name 'node_modules' -type d -exec rm -rf {} +"
+```
+
+You can run `pnpm run clean` to remove all node_modules.
+then run `pnpm i` to install all dependencies.
+_Note_: It doesn't work on `nu` terminal.
