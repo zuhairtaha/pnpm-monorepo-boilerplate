@@ -1,10 +1,12 @@
 {
-  "name": "my-monorepo",
+  "name": "@tahasoft/root",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "pnpm --filter my-library run start"
+    "main:start": "pnpm -F @tahasoft/main run start",
+    "second:start": "pnpm -F @tahasoft/second run start",
+    "start": "pnpm -r run start"
   },
   "keywords": [],
   "author": "",
