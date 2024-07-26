@@ -14,4 +14,17 @@ importers:
         specifier: workspace:*
         version: link:../second
 
-  packages/second: {}
+  packages/second:
+    dependencies:
+      just-snake-case:
+        specifier: ^3.2.0
+        version: 3.2.0
+
+packages:
+
+  just-snake-case@3.2.0:
+    resolution: {integrity: sha512-iugHP9bSE0jOq3BzN0W0rdu/OOkFirPe8FtUw6v9y37UlbUDgJ1x4xiGNfUhI6mV9dc/paaifyiyn+F+mrm8gw==}
+
+snapshots:
+
+  just-snake-case@3.2.0: {}

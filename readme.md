@@ -43,3 +43,17 @@ Add in root package.json
 ```
 
 That will make sure that all packages are using the same node version.
+
+# Add dependency to `@tahasoft/second`
+
+```bash
+pnpm -F @tahasoft/second add just-snake-case
+pnpm i
+```
+
+Then in `packages\second\index.js`
+
+```ts
+import snakeCase from "just-snake-case";
+console.log(snakeCase("Hello World"));
+```
