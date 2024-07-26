@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "pnpm -F @tahasoft/app run start",
+    "build": "pnpm -F @tahasoft/app run build",
     "update:all": "pnpm -r update -i -L",
     "clean": "find . -name 'node_modules' -type d -exec rm -rf {} +"
   },
