@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "main:start": "pnpm -F @tahasoft/main run start",
-    "second:start": "pnpm -F @tahasoft/second run start",
-    "start": "pnpm -r run start",
+    "start": "pnpm -F @tahasoft/app run start",
     "update:all": "pnpm -r update -i -L",
     "clean": "find . -name 'node_modules' -type d -exec rm -rf {} +"
   },
@@ -20,7 +18,7 @@
     "node": ">=20.12.2",
     "pnpm": ">=9.6.0"
   },
-  "dependencies": {
-    "just-kebab-case": "^4.2.0"
+  "devDependencies": {
+    "typescript": "^5.5.4"
   }
 }

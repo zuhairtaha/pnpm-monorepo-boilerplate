@@ -1,5 +1,5 @@
 {
-  "name": "@tahasoft/main",
+  "name": "@tahasoft/ui",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,8 +9,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@tahasoft/second": "workspace:*"
-  }
+  "license": "ISC"
 }

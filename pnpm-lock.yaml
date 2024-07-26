@@ -7,33 +7,32 @@ settings:
 importers:
 
   .:
+    devDependencies:
+      typescript:
+        specifier: ^5.5.4
+        version: 5.5.4
+
+  packages/app:
     dependencies:
-      just-kebab-case:
-        specifier: ^4.2.0
-        version: 4.2.0
+      '@tahasoft/ui':
+        specifier: workspace:*
+        version: link:../ui
 
   packages/main:
     dependencies:
-      '@tahasoft/second':
+      '@tahasoft/ui':
         specifier: workspace:*
-        version: link:../second
+        version: link:../ui
 
-  packages/second:
-    dependencies:
-      just-snake-case:
-        specifier: ^3.2.0
-        version: 3.2.0
+  packages/ui: {}
 
 packages:
 
-  just-kebab-case@4.2.0:
-    resolution: {integrity: sha512-p2BdO7o4BI+pMun3J+dhaOfYan5JsZrw9wjshRjkWY9+p+u+kKSMhNWYnot2yHDR9CSahZ9iT3dcqJ+V72qHMw==}
-
-  just-snake-case@3.2.0:
-    resolution: {integrity: sha512-iugHP9bSE0jOq3BzN0W0rdu/OOkFirPe8FtUw6v9y37UlbUDgJ1x4xiGNfUhI6mV9dc/paaifyiyn+F+mrm8gw==}
+  typescript@5.5.4:
+    resolution: {integrity: sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==}
+    engines: {node: '>=14.17'}
+    hasBin: true
 
 snapshots:
 
-  just-kebab-case@4.2.0: {}
-
-  just-snake-case@3.2.0: {}
+  typescript@5.5.4: {}

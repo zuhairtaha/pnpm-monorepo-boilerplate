@@ -2,7 +2,7 @@
 - create packages folder
 - create packages/main folder
 - run pnpm init in packages/main
-- in packages/main/package.json set "name" to "@tahasoft/main"
+- in packages/main/package.json set "name" to "@tahasoft/app"
 
 # 5. Multiple Package And Recursive Commands
 
@@ -18,14 +18,14 @@ in `packages\main\package.json` add
 
 ```json
   "dependencies": {
-    "@tahasoft/second": "workspace:*"
+    "@tahasoft/ui": "workspace:*"
   }
 ```
 
 Now in `packages\main\index.js` you can
 
 ```ts
-import { second } from "@tahasoft/second";
+import { second } from "@tahasoft/ui";
 console.log(second);
 ```
 
@@ -44,10 +44,10 @@ Add in root package.json
 
 That will make sure that all packages are using the same node version.
 
-# Add dependency to `@tahasoft/second`
+# Add dependency to `@tahasoft/ui`
 
 ```bash
-pnpm -F @tahasoft/second add just-snake-case
+pnpm -F @tahasoft/ui add just-snake-case
 pnpm i
 ```
 
@@ -76,7 +76,7 @@ in root run:
 pnpm add just-kebab-case -w
 ```
 
-Now in `@tahasoft/main` and `@tahasoft/second` you can use `just-kebab-case` package.
+Now in `@tahasoft/app` and `@tahasoft/ui` you can use `just-kebab-case` package.
 
 ```ts
 import kebabCase from "just-kebab-case";

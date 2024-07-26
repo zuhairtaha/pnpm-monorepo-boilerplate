@@ -1,5 +1,5 @@
 {
-  "name": "@tahasoft/second",
+  "name": "@tahasoft/app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,6 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "just-snake-case": "^3.2.0"
+    "@tahasoft/ui": "workspace:*"
   }
 }
