@@ -67,3 +67,18 @@ in root package.json
     "update:all": "pnpm -r update -i -L" // i=interactive, L=latest (or --latest)
   }
 ```
+
+# Install a package in all packages
+
+in root run:
+
+```bash
+pnpm add just-kebab-case -w
+```
+
+Now in `@tahasoft/main` and `@tahasoft/second` you can use `just-kebab-case` package.
+
+```ts
+import kebabCase from "just-kebab-case";
+console.log(kebabCase("Hello World"));
+```
