@@ -1,3 +1,4 @@
-import "./navbar.ts";
+import { Navbar } from "./navbar.ts";
 
-console.log("app.2..");
+export { Navbar };
+

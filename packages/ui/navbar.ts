@@ -1,4 +1,4 @@
-class Navbar extends HTMLElement {
+export class Navbar extends HTMLElement {
   #root = this.attachShadow({ mode: "open" });
 
   connectedCallback() {

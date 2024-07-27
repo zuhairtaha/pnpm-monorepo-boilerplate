@@ -1,4 +1,4 @@
-import "@tahasoft/ui";
+import { Navbar } from "@tahasoft/ui";
 
-const el =  document.createElement("nav-bar");
+const el = new Navbar();
 document.body.append(el);
