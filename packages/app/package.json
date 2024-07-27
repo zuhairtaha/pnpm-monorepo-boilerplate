@@ -8,7 +8,7 @@
     "build": "tsx --env-file=.env bin/build.ts",
     "format": "prettier --write \"src/**/*.{ts,tsx}\" \"public/**/*.{html,css,json}\"",
     "test": "tsc --noEmit",
-    "lint": "eslint src/**/*.ts --fix",
+    "lint": "eslint . --fix",
     "check": "node bin/check.ts"
   },
   "keywords": [],

@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "scripts": {
+    "lint": "eslint . --fix"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

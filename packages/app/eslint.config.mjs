@@ -20,5 +20,11 @@ export default tseslint.config(
 
   {
     rules: eslintBaseRules
+  },
+  {
+    files: ["**/bin/**/*.{js,mjs,cjs,ts}"],
+    rules: {
+      "unicorn/no-process-exit": "off"
+    }
   }
 );

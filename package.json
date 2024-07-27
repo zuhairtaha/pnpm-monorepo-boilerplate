@@ -6,7 +6,9 @@
   "scripts": {
     "build": "pnpm -F @tahasoft/app run build",
     "update:all": "pnpm -r update -i -L",
-    "clean": "find . -name 'node_modules' -type d -exec rm -rf {} +"
+    "clean": "find . -name 'node_modules' -type d -exec rm -rf {} +",
+    "lint": "pnpm --parallel -F \"@tahasoft/*\" lint",
+    "lint1": "pnpm -F \"@tahasoft/*\" lint"
   },
   "keywords": [],
   "author": "",

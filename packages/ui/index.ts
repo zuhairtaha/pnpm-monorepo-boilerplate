@@ -1,4 +1,2 @@
-import { Navbar } from "./navbar.ts";
-
-export { Navbar };
+export { Navbar } from "./navbar.ts";
 
