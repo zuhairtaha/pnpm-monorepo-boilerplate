@@ -4,7 +4,15 @@
 - run pnpm init in packages/main
 - in packages/main/package.json set "name" to "@tahasoft/app"
 
-# 5. Multiple Package And Recursive Commands
+`pnpm-workspace.yaml`:
+
+```yaml
+packages:
+  - "packages/*"
+  - "!**/test/**"
+```
+
+# Multiple Package And Recursive Commands
 
 -r flag is used to run a command in all packages. (recursive)
 
@@ -31,7 +39,7 @@ console.log(second);
 
 Run `pnpm install` in _root_ folder to install the dependencies.
 
-# engines
+# Engines
 
 Add in root package.json
 
@@ -68,7 +76,37 @@ in root package.json
   }
 ```
 
-# Install a package in all packages
+# Running Scripts Across Packages
+
+```bash
+pnpm -F @tahasoft/ui start
+pnpm -C packages/@tahasoft/ui start
+```
+
+Running `start` script in all packages:
+
+```bash
+pnpm run start -F .
+pnpm run start -F @tahasoft/*
+```
+
+You can use `--filter` instead of `-F`.
+
+# Add Dependencies
+
+```bash
+pnpm add lodash -F @tahasoft/ui
+```
+
+# Linking Between Packages:
+
+If `@tahasoft/server` depends on `@tahasoft/ui`:
+
+```bash
+pnpm add @tahasoft/ui -F @tahasoft/server
+```
+
+# Install a package in root and use it in a package
 
 in root run:
 
@@ -83,6 +121,20 @@ import kebabCase from "just-kebab-case";
 console.log(kebabCase("Hello World"));
 ```
 
+# Add a package to all packages
+
+```bash
+pnpm recursive add <package-name>
+# or
+pnpm add -D typescript -F .
+```
+
+# Update a package
+
+```bash
+pnpm up typescript
+```
+
 # Remove all node_modules
 
 add to root package.json
@@ -91,6 +143,6 @@ add to root package.json
 "clean": "find . -name 'node_modules' -type d -exec rm -rf {} +"
 ```
 
-You can run `pnpm run clean` to remove all node_modules.
+You can run `pnpm run clean` to remove all node*modules.
 then run `pnpm i` to install all dependencies.
-_Note_: It doesn't work on `nu` terminal.
+\_Note*: It doesn't work on `nu` terminal.
