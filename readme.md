@@ -128,9 +128,9 @@ console.log(kebabCase("Hello World"));
 # Add a package to all packages
 
 ```bash
-pnpm recursive add <package-name>
-# or
-pnpm add -D typescript -F .
+pnpm add -r <package-name>
+# example
+pnpm add -Dr typescript
 ```
 
 # Update a package
