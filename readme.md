@@ -125,7 +125,7 @@ import kebabCase from "just-kebab-case";
 console.log(kebabCase("Hello World"));
 ```
 
-# Add a package to all packages
+# Add a dependency to all packages
 
 ```bash
 pnpm add -r <package-name>
