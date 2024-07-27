@@ -106,6 +106,10 @@ If `@tahasoft/server` depends on `@tahasoft/ui`:
 pnpm add @tahasoft/ui -F @tahasoft/server
 ```
 
+I had an issue after created `@tahasoft/shared` and the way worked for me is
+by adding `@tahasoft/shared` to package.json in `@tahasoft/app`
+then run `pnpm i` in root folder.
+
 # Install a package in root and use it in a package
 
 in root run:

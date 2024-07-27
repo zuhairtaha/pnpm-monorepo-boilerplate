@@ -15,7 +15,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@tahasoft/ui": "workspace:*"
+    "@tahasoft/ui": "workspace:*",
+    "@tahasoft/shared": "workspace:*"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",

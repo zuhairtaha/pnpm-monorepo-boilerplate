@@ -14,6 +14,9 @@ importers:
 
   packages/app:
     dependencies:
+      '@tahasoft/shared':
+        specifier: workspace:*
+        version: link:../shared
       '@tahasoft/ui':
         specifier: workspace:*
         version: link:../ui
@@ -33,6 +36,8 @@ importers:
       tsx:
         specifier: ^4.16.2
         version: 4.16.2
+
+  packages/shared: {}
 
   packages/ui: {}
 
