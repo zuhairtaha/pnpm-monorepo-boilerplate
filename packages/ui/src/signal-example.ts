@@ -1,5 +1,4 @@
 import { SignalWatcher } from "@lit-labs/preact-signals";
-import { CountEvent } from "@tahasoft/shared/src/CountEvent.ts";
 import { LitElement, css, html } from "lit";
 import { customElement } from "lit/decorators.js";
 import { count } from "./signals.ts";
@@ -25,8 +24,8 @@ export class SignalExample extends SignalWatcher(LitElement) {
   }
 }
 
-declare global {
-  interface HTMLElementTagNameMap {
-    "signal-example": SignalExample;
+export class CountEvent extends Event {
+  constructor(public count: number) {
+    super("count-changed", { bubbles: true });
   }
 }
