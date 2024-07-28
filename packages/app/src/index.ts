@@ -1,6 +1,15 @@
-import { add } from "@tahasoft/shared/src";
-import { Navbar } from "@tahasoft/ui/src";
+import { CountEvent } from "@tahasoft/shared/src/CountEvent.ts";
+import "@tahasoft/ui/src/signal-example";
+import { SignalExample } from "@tahasoft/ui/src/signal-example.ts";
+import { count } from "@tahasoft/ui/src/signals.ts";
 
-const el = new Navbar();
+const el = document.createElement("signal-example") as SignalExample;
 document.body.append(el);
-console.log(add(1, 2));
+
+setInterval(() => {
+  count.value = count.value + 1;
+}, 1000);
+
+window.addEventListener("count-changed", (evt: CountEvent) => {
+  console.log("count-changed", evt.count);
+});
