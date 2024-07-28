@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsx --env-file=.env bin/build.ts",
     "format": "prettier --write \"src/**/*.{ts,tsx}\" \"public/**/*.{html,css,json}\"",
-    "test": "tsc --noEmit && eslint ./src --fix && prettier --check ./src",
+    "test": "tsc --noEmit && tsc --noEmit -p bin && eslint ./src --fix && prettier --check ./src",
     "check": "node bin/check.ts"
   },
   "keywords": [],

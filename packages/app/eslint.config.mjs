@@ -25,6 +25,7 @@ export default tseslint.config(
     files: ["**/bin/**/*.{js,mjs,cjs,ts}"],
     rules: {
       "unicorn/no-process-exit": "off"
-    }
+    },
+    languageOptions: { globals: globals.node }
   }
 );
