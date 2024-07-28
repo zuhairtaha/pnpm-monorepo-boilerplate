@@ -1,8 +1,7 @@
 {
   "name": "@tahasoft/root",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A boilerplate for creating a monorepo with pnpm workspaces with TypeScript, ESLint, Prettier",
   "scripts": {
     "build": "pnpm -F @tahasoft/app run build",
     "update:all": "pnpm -r update -i -L",
@@ -10,8 +9,15 @@
     "test": "pnpm --parallel -F \"@tahasoft/*\" test",
     "format": "pnpm --parallel -F \"@tahasoft/*\" format"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "monorepo",
+    "pnpm",
+    "typescript",
+    "eslint",
+    "prettier",
+    "flat config of eslint"
+  ],
+  "author": "Zuhair Taha",
   "license": "ISC",
   "workspaces": [
     "packages/*"
