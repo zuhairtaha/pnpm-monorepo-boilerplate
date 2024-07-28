@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-
 import { watch } from "chokidar";
 import { build as _build } from "esbuild";
 import { copySync, emptyDir } from "fs-extra/esm";
@@ -10,6 +8,7 @@ async function build() {
     entryPoints: [{ in: "src/index.ts", out: "index" }],
     bundle: true,
     sourcemap: process.env.NODE_ENV === "development" ? "inline" : false,
+    minify: process.env.NODE_ENV === "production",
     outdir: dist,
     platform: "browser",
     target: ["chrome58", "firefox57", "safari11"],
