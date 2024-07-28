@@ -1,152 +1,80 @@
-- init pnpm project
-- create packages folder
-- create packages/main folder
-- run pnpm init in packages/main
-- in packages/main/package.json set "name" to "@tahasoft/app"
+## Introduction
 
-`pnpm-workspace.yaml`:
+A monorepo is a single repository that holds multiple projects, which can be related or unrelated. PNPM (Performant NPM) is a fast, disk space-efficient package manager. It has built-in support for managing monorepos.
+
+## Setting Up a PNPM Monorepo
+
+Create a `pnpm-workspace.yaml` file in your project root to define the workspace.
 
 ```yaml
 packages:
-  - "packages/*"
-  - "!**/test/**"
+  - "packages/"
 ```
 
-# Multiple Package And Recursive Commands
-
--r flag is used to run a command in all packages. (recursive)
+## Adding a dependency for a specific workspace:
 
 ```bash
-"start": "pnpm -r run start"
+pnpm add <package-name> -F <workspace-name>
 ```
 
-# Sharing code between packages
+# Updating all dependencies in the monorepo:
 
-in `packages\main\package.json` add
+```bash
+pnpm up -r
+```
+
+# Adding a global dependency that applies to all packages:
+
+```bash
+pnpm add -w <package-name>
+```
+
+# Run a script in all packages that have it:
+
+```bash
+pnpm -r run <script-name>
+```
+
+## Run a command only in affected packages:
+
+```bash
+pnpm -F <workspace-name> run <script-name>
+```
+
+## Run a command in all packages except specified:
+
+```bash
+pnpm -F !<excluded-workspace> run <script-name>
+```
+
+### Linking Between Packages
+
+To leverage the power of monorepos, linking packages is straightforward:
+
+```bash
+pnpm add <local-package-name> -F <consumer-package>
+```
+
+⚠️ If you had issues, you can add it to package.json dependencies. For example:
 
 ```json
   "dependencies": {
-    "@tahasoft/ui": "workspace:*"
+    "@my-scope/shared": "workspace:*",
   }
 ```
 
-Now in `packages\main\index.js` you can
-
-```ts
-import { second } from "@tahasoft/ui";
-console.log(second);
-```
-
-Run `pnpm install` in _root_ folder to install the dependencies.
-
-# Engines
-
-Add in root package.json
+then run `pnpm i` in root.
 
 ```json
-  "engines": {
-    "node": ">=20.12.2",
-    "pnpm": ">=9.6.0"
+  "dependencies": {
+    "@my-scope/shared": "workspace:*",
   }
 ```
 
-That will make sure that all packages are using the same node version.
+then run `pnpm i` in root.
 
-# Add dependency to `@tahasoft/ui`
-
-```bash
-pnpm -F @tahasoft/ui add just-snake-case
-pnpm i
-```
-
-Then in `packages\second\index.js`
-
-```ts
-import snakeCase from "just-snake-case";
-console.log(snakeCase("Hello World"));
-```
-
-# Update all packages
-
-in root package.json
-
-```json
-  "scripts": {
-    "update:all": "pnpm -r update -i -L" // i=interactive, L=latest (or --latest)
-  }
-```
-
-# Running Scripts Across Packages
+## Publish all changed packages:
 
 ```bash
-pnpm -F @tahasoft/ui start
-pnpm -C packages/@tahasoft/ui start
+pnpm publish -r -F "@my-scope/*"
 ```
-
-Running `start` script in all packages:
-
-```bash
-pnpm run start -F .
-pnpm run start -F @tahasoft/*
-```
-
-You can use `--filter` instead of `-F`.
-
-# Add Dependencies
-
-```bash
-pnpm add lodash -F @tahasoft/ui
-```
-
-# Linking Between Packages:
-
-If `@tahasoft/server` depends on `@tahasoft/ui`:
-
-```bash
-pnpm add @tahasoft/ui -F @tahasoft/server
-```
-
-I had an issue after created `@tahasoft/shared` and the way worked for me is
-by adding `@tahasoft/shared` to package.json in `@tahasoft/app`
-then run `pnpm i` in root folder.
-
-# Install a package in root and use it in a package
-
-in root run:
-
-```bash
-pnpm add just-kebab-case -w
-```
-
-Now in `@tahasoft/app` and `@tahasoft/ui` you can use `just-kebab-case` package.
-
-```ts
-import kebabCase from "just-kebab-case";
-console.log(kebabCase("Hello World"));
-```
-
-# Add a dependency to all packages
-
-```bash
-pnpm add -r <package-name>
-# example
-pnpm add -Dr typescript
-```
-
-# Update a package
-
-```bash
-pnpm up typescript
-```
-
-# Remove all node_modules
-
-add to root package.json
-
-```json
-"clean": "find . -name 'node_modules' -type d -exec rm -rf {} +"
-```
-
-You can run `pnpm run clean` to remove all node*modules.
-then run `pnpm i` to install all dependencies.
-\_Note*: It doesn't work on `nu` terminal.
